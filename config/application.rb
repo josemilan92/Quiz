@@ -2,6 +2,7 @@ require_relative 'boot'
 
 require 'rails/all'
 
+config.serve_statc_assests=true;
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
