@@ -9,10 +9,13 @@
     <%= image_tag( pin.photo, :class => 'img-responsive') %>
     <%= pin.description %>
      <div class="buttons", style="margin-top:10px; margin-bottom:10px ">
+       <% if current_user.nil? %>
         <%= link_to 'Show', pin , :class => 'btn'%>
+       <% else %>
         <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
         <%= link_to 'Destroy', pin, :method=> :delete, data: { confirm: 'Are you sure?' }, :class => 'btn'  %>
-     </div>
+       <% end %>
+           </div>
    </div>
 </div>
     <% end %>
