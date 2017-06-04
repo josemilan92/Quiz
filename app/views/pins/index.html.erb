@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="grid">
  <h1>Pins</h1>
   <% @pins.each do |pin| %>
-<div class="col-md-3">
+<div class="grid-item" style="width: 20%">
   <div class="thumbnail">
     <%= pin.name %>
     <%= image_tag( pin.photo, :class => 'img-responsive') %>
@@ -19,3 +19,20 @@
 <br>
 <%= link_to 'New Pin', new_pin_path %>
 </div>
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+$(window).load(function(){
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+})
+</script>
