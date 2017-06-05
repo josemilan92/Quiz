@@ -19,6 +19,7 @@ class PinsController < ApplicationController
   # GET /pins/1
   # GET /pins/1.json
   def show
+    @pins = current_user.pins
   end
 
   # GET /pins/new
@@ -33,8 +34,8 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = Pin.new(pin_params)
 
+    @pin = Pin.new(pin_params)
     respond_to do |format|
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
@@ -78,6 +79,7 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:photo, :description, :name)
+
+      params.require(:pin).permit(:photo, :description, :name, :user_id)
     end
 end

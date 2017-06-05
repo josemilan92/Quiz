@@ -258,7 +258,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bcrypt
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.6)
   byebug
   cancan
   capybara (~> 2.13)
